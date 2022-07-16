@@ -1,3 +1,4 @@
+#containerized Operationg system
 version: '3'
 services:
     database:
@@ -17,5 +18,16 @@ services:
             context: .
             dockerfile: nginx-primer/Dockerfile
         ports:
-            - 80:80
+            - 80:80     #exposing port 80 on our local system
             - 443:443
+        extra_hosts:
+            - "app-server: 10.9.127.137"  #ip of your local system where ... is running; IP alias
+
+   # jenkins:
+    #    image: jenkins/jenkins:lts
+     #   ports: 
+      #  - "8080:8080"
+       # - "50000:50000"
+        #volumes:
+        
+        #- /Users/sope/data/jenkins/home:/var/jenkins_home
